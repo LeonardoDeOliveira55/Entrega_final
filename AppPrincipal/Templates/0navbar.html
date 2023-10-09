@@ -1,0 +1,64 @@
+
+
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-light" id="mainNav" style="margin-bottom: -2px;padding-bottom: 1px;">
+    <div class="container"><a class="navbar-brand" >INNOVACIÓN TÉRMICA</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive" style="padding-bottom: 0px;margin-bottom: 0px;">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="{% url 'Inicio' %}" style="text-align: center;font-size: 12px;">Inicio</a>
+                {% if user.is_superuser %}
+                    <a class="nav-link" href="{% url 'Opciones_pedidos' %}" style="text-align: center;font-size: 12px;">Pedidos</a></li>
+                {% endif %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'listar_servicio' %}" style="text-align: center;font-size: 12px;">servicos</a>
+                {% if user.is_superuser %}
+                    <a class="nav-link" href="{% url 'Opciones_provedores' %}" style="text-align: center;font-size: 12px;">provedores</a></li>
+                {% endif %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'contacto' %}" style="text-align: center;font-size: 12px;">Contacto</a>
+                {% if user.is_superuser %}
+                    <a class="nav-link" href="{% url 'Opciones_empleados' %}" style="text-align: center;font-size: 12px;">empleados</a></li>
+                {% endif %}
+                <li class="nav-item"><a class="nav-link"  style="font-size: 12px;text-align: center;"></a>
+                {% if user.is_superuser %}
+                    <a class="nav-link" href="{% url 'crear_servicio' %}" style="font-size: 12px;text-align: center;">Crear servico</a></li>
+                {% endif %}
+                
+
+
+                
+                {% if user.is_authenticated %}
+
+                    
+                    {% if url_avatar %}
+                        <DIV style="text-align: center; display: flex; justify-content: center; align-items: center;">
+                        <img src="{{url_avatar}}" height="30px" alt="avatar" style="display: inline-block;">
+                        </DIV>
+                        
+                    {% endif %}
+                    <h6 style="text-align: center; display: flex; justify-content: center; align-items: center;"> <span style="color:aliceblue; ">Bienvenido {{ user.username }}</span></h6>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}" style="font-size: 12px;color: rgb(13,210,186);text-align: center;">Logout</a>
+                {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}" style="font-size: 12px;color: rgb(13,210,186);text-align: center;">Login</a>
+                
+                {% endif %}
+                    
+                {% if user.is_superuser %}
+                    <a class="nav-link" href="{% url 'Opciones_clientes' %}" style="font-size: 12px;text-align: center;">Clientes</a></li>
+                {% endif %}           
+                {% if user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'edit_user' %}" style="font-size: 12px;color: rgb(13,210,186);text-align: center;">Editar usuario</a> 
+                <a class="nav-link" style="font-size: 12px;text-align: center;"></a></li>
+
+                {% else %}
+
+                <li class="nav-item"><a class="nav-link" href="{% url 'register_user' %}" style="font-size: 12px;color: rgb(13,210,186);text-align: center;">Registro</a> 
+                <a class="nav-link" style="font-size: 12px;text-align: center;"></a></li>
+
+                {% endif %}
+
+                
+
+
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block base %}
+
+    <form action="{% url 'agregar_avatar' %}"  enctype="multipart/form-data"  method="post"> {% csrf_token %}
+
+    {{form.as_p}}
+
+    <button type="submit">Cargar imagen</button>
+
+    </form>
+
+    
+<button><a href="{% url 'Inicio' %}" style="padding-left: 100px;padding-right: 100px;position: relative;justify-content: center;align-items: center;height: 10vh;">Volver</a></button>
+{% endblock base %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block base %}
+<div class="container">
+  <ul class="list-group">
+    {% for servicio in listar_servicio %}
+      <li class="list-group-item">
+        <a href="{% url 'detalle_servicio' numero_servicio=servicio.pk %}">
+          <h4 class="card-title">Tipo de Servicio: {{ servicio.tipo_servicio }}</h4>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <div class="mt-4">
+    <a href="{% url 'Inicio' %}" class="btn btn-primary">Volver</a>
+  </div>
+</div>
+{% endblock base %}

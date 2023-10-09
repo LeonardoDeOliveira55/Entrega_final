@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block base %}
+
+
+
+
+<li>Tipo servicio: {{servicio.tipo_servicio}}</li>
+<li>Descripcion: {{servicio.descripcion}}</li>
+<li>Parametros: {{servicio.parametros_tratamiento}}</li>
+<li>Equipo: {{servicio.equipo_requerido}}</li>
+<li>ID: {{servicio.pk}}</li>
+
+
+
+<button><a href="{% url 'listar_servicio' %}" style="padding-left: 100px;padding-right: 100px;position: relative;justify-content: center;align-items: center;height: 10vh;">Volver</a></button>
+
+
+
+{% endblock base %}
+

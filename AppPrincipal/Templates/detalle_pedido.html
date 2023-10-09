@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block base %}
+
+
+
+
+<li>Cliente : {{pedido.cliente}}
+<li>Numero de pedido : {{pedido.pk}}</li>
+<li>Servicios solicitados : {{pedido.servicios_solicitados}}</li>
+<li>fecha solicitud : {{pedido.fecha_solicitud}}</li>
+<li>fecha entrega deseada : {{pedido.fecha_entrega_deseada}}</li>
+<li>Estado pedido : {{pedido.estado_pedido}}</li>
+
+<button><a href="{% url 'pedido_list' %}" style="padding-left: 100px;padding-right: 100px;position: relative;justify-content: center;align-items: center;height: 10vh;">Volver</a></button>
+<button><a href="{% url 'pedido_edit' pk=pedido.pk %}" style="padding-left: 100px;padding-right: 100px;position: relative;justify-content: center;align-items: center;height: 10vh;">Editar pedido</a></button>
+
+<div>
+    <form action="{% url 'pedido_delete' pk=pedido.pk %}" method="post"> {% csrf_token %}
+        <button><a type="submit" >Eliminar pedido</a></button>
+    </form>
+</div>
+    
+
+{% endblock base %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block base %}
+    
+<div class="btn btn-primary" style="align-items: center;justify-content: center;position: static;display: inline-grid;margin-top: 0px;padding-top: 16px; padding-left: 100px;padding-right: 100px; background-color: aqua;">
+
+    <button><a class="nav-link" href="{% url 'cliente_list' %}" style="position: relative;;text-align: center;font-size: 19px;">Lista clientes</button>
+    
+    <button><a class="nav-link" href="{% url 'cliente_create' %}" style="text-align: center;font-size: 19px;">Crear cliente</a></button>
+    <button><a class="nav-link" href="" style="text-align: center;font-size: 19px;">-----------</a></button>
+    <button><a class="nav-link" href="" style="text-align: center;font-size: 19px;">-----------</a></button>    
+</div>
+   
+{% endblock base %}
+<!--<button><a class="nav-link" href="{% url 'cliente_detail' %}" style="text-align: center;font-size: 19px;">Detalle clientes</a></button>  -->

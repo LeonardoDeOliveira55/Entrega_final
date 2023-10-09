@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block base %}
+
+<H1>Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.</H1>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = "{% url 'Inicio' %}"; 
+        }, 5000); 
+
+
+    </script>
+{% endblock base %}

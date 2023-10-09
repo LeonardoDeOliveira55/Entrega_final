@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block base %}
+    
+<div class="btn btn-primary" style="align-items: center;justify-content: center;position: static;display: inline-grid;margin-top: 0px;padding-top: 16px; padding-left: 100px;padding-right: 100px; background-color: aqua;">
+
+    <button><a class="nav-link" href="{% url 'programar_pedido'%}" style="position: relative;;text-align: center;font-size: 19px;">Programar pedido</button>
+    <!--<button><a class="nav-link" href="servicios.html" style="text-align: center;font-size: 19px;">Detalle empleados</a></button>-->
+    <button><a class="nav-link" href="{% url 'registrar_tratamiento'%}" style="text-align: center;font-size: 19px;">Registrar tratamiento</a></button>
+    <button><a class="nav-link" href="" style="text-align: center;font-size: 19px;">-----------</a></button>
+    <button><a class="nav-link" href="" style="text-align: center;font-size: 19px;">-----------</a></button>    
+</div>
+   
+{% endblock base %}registrar_tratamiento

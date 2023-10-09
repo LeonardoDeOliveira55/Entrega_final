@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>INNOVACIÓN TÉRMICA</title>
+    <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">   
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/mis_estilos.css' %}">
+    
+</head>
+
+<body>
+    {% include '0navbar.html' %}
+    <header class="masthead" style="background: url('{% static "assets/img/vista-interior-fabrica-acero.jpg" %}') center / cover;">
+
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto position-relative">
+                    <div class="site-heading">
+                        <h1 style="font-size: 42px;">Soluciones en todo tipo de tratamiento térmico</h1><span class="subheading">Somos una empresa abocada en darte soluciones</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    {% block base %}
+        
+    {% endblock base %}
+           
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto" style="padding-right: 0px;padding-left: 96px;margin-top: -33px;margin-bottom: -29px;padding-bottom: 0px;padding-top: 30px;">
+                    <p style="margin-top: 0px;margin-bottom: 0px;"></p><a class="btn btn-primary" role="button" style="position: static;display: inline-grid;margin-top: 0px;padding-top: 16px;" href="{% url 'sobre_mi' %}">Sobre mi</a>
+                    <p class="text-muted copyright" style="padding-bottom: 0px;margin-bottom: 5px;padding-left: 56px;margin-left: 229px;padding-top: 1px;margin-top: -41px;padding-right: 0px;">Copyright&nbsp;©&nbsp;L. De Oliveira 2023</p>
+                </div>
+                <div class="col">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></li>
+                        <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span></li>
+                        <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-github fa-stack-1x fa-inverse"></i></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/clean-blog.js' %}"></script>
+</body>
+
+</html>

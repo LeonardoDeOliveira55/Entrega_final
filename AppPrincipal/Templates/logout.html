@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block base %}
+
+<H1>Usted se desloguio</H1>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = "{% url 'Inicio' %}"; 
+        }, 1000); 
+
+
+    </script>
+{% endblock base %}

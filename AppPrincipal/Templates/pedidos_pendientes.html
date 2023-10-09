@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block base %}
+
+
+{% for lista in pedidos_pendientes %}
+
+<li><a href="{% url 'pedido_detail' pk=lista.pk %}">Numero Pedido: {{lista.pk}} / Nombre cliente; {{lista.registros_tratamientos}} / Estado: {{lista.estado_pedido}}</a></li>
+
+    
+{% endfor %}
+    
+<button><a href="{% url 'Opciones_pedidos' %}" style="padding-left: 100px;padding-right: 100px;position: relative;justify-content: center;align-items: center;height: 10vh;">Volver</a></button>
+{% endblock base %}

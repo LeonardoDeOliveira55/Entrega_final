@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block base %}
+
+
+
+
+<li>Nombre : {{cliente.nombre}}
+<li>Numero de Cliente : {{cliente.numero_cliente}}</li>
+<li>Direccion : {{cliente.direccion}}</li>
+<li>Telefono : {{cliente.telefono}}</li>
+<li>Email : {{cliente.correo_electronico}}</li>
+<li>Historial : {{cliente.historial_pedidos}}</li>
+
+<button><a href="{% url 'cliente_list' %}" style="padding-left: 100px;padding-right: 100px;position: relative;justify-content: center;align-items: center;height: 10vh;">Volver</a></button>
+<button><a href="{% url 'cliente_edit' numero_cliente=cliente.numero_cliente %}" style="padding-left: 100px;padding-right: 100px;position: relative;justify-content: center;align-items: center;height: 10vh;">Editar cliente</a></button>
+<button><a href="{% url 'crear_documento' pk=cliente.numero_cliente %}" style="padding-left: 100px;padding-right: 100px;position: relative;justify-content: center;align-items: center;height: 10vh;">Crear documento</a></button>
+<button><a href="{% url 'ver_certificado' pk=cliente.numero_cliente %}" style="padding-left: 100px;padding-right: 100px;position: relative;justify-content: center;align-items: center;height: 10vh;">Ver certificados</a></button>
+<div>
+    <form action="{% url 'cliente_delete' numero_cliente=cliente.numero_cliente %}" method="post"> {% csrf_token %}
+        <button><a type="submit" >Eliminar cliente</a></button>
+    </form>
+</div>
+    
+
+{% endblock base %}

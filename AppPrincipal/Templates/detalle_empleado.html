@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block base %}
+
+
+
+
+<li>nombre : {{empleado.nombre}}</li>
+<li>Numero de empelado : {{empleado.pk}}</li>
+<li>Direccion : {{empleado.direccion}}</li>
+<li>telefono : {{empleado.telefono}}</li>
+<li>correo electronico : {{empleado.correo_electronico}}</li>
+<li>fecha contratacion : {{empleado.fecha_contratacion}}</li>
+<li>Historial empleo : {{empleado.historial_empleo}}</li>
+
+
+
+<button><a href="{% url 'empleado_list' %}" style="padding-left: 100px;padding-right: 100px;position: relative;justify-content: center;align-items: center;height: 10vh;">Volver</a></button>
+<button><a href="{% url 'empleado_edit' pk=empleado.pk %}" style="padding-left: 100px;padding-right: 100px;position: relative;justify-content: center;align-items: center;height: 10vh;">Editar empleado</a></button>
+<button><a href="{% url 'listar_capacitaciones' empleado_id=empleado.pk %}" style="padding-left: 100px;padding-right: 100px;position: relative;justify-content: center;align-items: center;height: 10vh;">Capacitaciones</a></button>
+
+<div>
+    <form action="{% url 'empleado_delete' pk=empleado.pk %}" method="post"> {% csrf_token %}
+        <button><a type="submit" >Eliminar empleado</a></button>
+    </form>
+</div>
+    
+    
+
+{% endblock base %}
+

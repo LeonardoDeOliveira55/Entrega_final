@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block base %}
+    <form action="{% url 'cliente_edit' cliente.numero_cliente %}" method="post"> {% csrf_token %}
+    
+        {{form.as_p}}
+
+        <button type="submit">Confirmar Cambios</button> <button><a href="{% url 'Opciones_clientes' %}" style="padding-left: 100px;padding-right: 100px;position: relative;justify-content: center;align-items: center;height: 10vh;">Volver</a></button>
+    </form>
+
+    
+{% endblock base %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block base %}
+    
+<div class="btn btn-primary" style="align-items: center;justify-content: center;position: static;display: inline-grid;margin-top: 0px;padding-top: 16px; padding-left: 100px;padding-right: 100px; background-color: aqua;">
+
+    <button><a class="nav-link" href="{% url 'pedido_list' %}" style="position: relative;;text-align: center;font-size: 19px;">Lista pedidos</button>
+    
+    <button><a class="nav-link" href="{% url 'pedido_create' %}" style="text-align: center;font-size: 19px;">Crear pedido</a></button>
+    <button><a class="nav-link" href="{% url 'pedidos_pendientes' %}" style="text-align: center;font-size: 19px;">Pedidos pendientes</a></button>
+    <button><a class="nav-link" href="{% url 'resultados_tratamientos' %}" style="text-align: center;font-size: 19px;">Resultados de tratamientos</a></button>    
+    <button><a class="nav-link" href="{% url 'registrar_tratamiento' %}" style="text-align: center;font-size: 19px;">Registrar tratamiento</a></button>
+    <button><a class="nav-link" href="{% url 'facturar_pedido' %}" style="text-align: center;font-size: 19px;">Facturar</a></button>
+    <button><a class="nav-link" href="{% url 'registrar_resultado_calidad' %}" style="text-align: center;font-size: 19px;">Registrar resultado calidad</a></button>
+</div>
+   
+{% endblock base %}
