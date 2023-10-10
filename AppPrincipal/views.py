@@ -511,7 +511,7 @@ def edit_user(req):
             password1 = form.cleaned_data.get('password1')
             if password1:
                 user.set_password(password1)
-                update_session_auth_hash(req, user)  # Actualiza la sesión del usuario
+                update_session_auth_hash(req, user)  
             user.save()
             return render(req, 'inicio.html', {'mensaje': 'Datos modificados correctamente'})
         else:
@@ -538,17 +538,17 @@ def agregar_avatar(req):
         if form.is_valid():
             data = form.cleaned_data
             if avatar_existente:
-                # Si el usuario ya tiene un avatar, actualiza el avatar existente
+                
                 avatar_existente.imagen = data["imagen"]
                 avatar_existente.save()
             else:
-                # Si el usuario no tiene un avatar, crea uno nuevo
+                
                 nuevo_avatar = Avatar(user=usuario, imagen=data["imagen"])
                 nuevo_avatar.save()
 
             return render(req, 'inicio.html', {'mensaje': 'Avatar agregado/modificado correctamente'})
     else:
-        # Si el usuario ya tiene un avatar, muestra el formulario de edición
+        
         if avatar_existente:
             form = AvatarForms(instance=avatar_existente)
         else:
