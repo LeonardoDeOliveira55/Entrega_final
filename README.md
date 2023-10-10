@@ -9,3 +9,7 @@ psw:  Homero_123
 Usuario con privilegios:   
 user: leo_deoliveira
 psw:  Homero_123
+
+Usuario superuser:
+user: Fabio
+psw:  Homero_123

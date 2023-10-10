@@ -6,19 +6,19 @@
         <div class="collapse navbar-collapse" id="navbarResponsive" style="padding-bottom: 0px;margin-bottom: 0px;">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="{% url 'Inicio' %}" style="text-align: center;font-size: 12px;">Inicio</a>
-                {% if user.is_superuser %}
+                {% if user.is_staff %}
                     <a class="nav-link" href="{% url 'Opciones_pedidos' %}" style="text-align: center;font-size: 12px;">Pedidos</a></li>
                 {% endif %}
                 <li class="nav-item"><a class="nav-link" href="{% url 'listar_servicio' %}" style="text-align: center;font-size: 12px;">servicos</a>
-                {% if user.is_superuser %}
+                {% if user.is_staff %}
                     <a class="nav-link" href="{% url 'Opciones_provedores' %}" style="text-align: center;font-size: 12px;">provedores</a></li>
                 {% endif %}
                 <li class="nav-item"><a class="nav-link" href="{% url 'contacto' %}" style="text-align: center;font-size: 12px;">Contacto</a>
-                {% if user.is_superuser %}
+                {% if user.is_staff %}
                     <a class="nav-link" href="{% url 'Opciones_empleados' %}" style="text-align: center;font-size: 12px;">empleados</a></li>
                 {% endif %}
                 <li class="nav-item"><a class="nav-link"  style="font-size: 12px;text-align: center;"></a>
-                {% if user.is_superuser %}
+                {% if user.is_staff %}
                     <a class="nav-link" href="{% url 'crear_servicio' %}" style="font-size: 12px;text-align: center;">Crear servico</a></li>
                 {% endif %}
                 
@@ -41,7 +41,7 @@
                 
                 {% endif %}
                     
-                {% if user.is_superuser %}
+                {% if user.is_staff %}
                     <a class="nav-link" href="{% url 'Opciones_clientes' %}" style="font-size: 12px;text-align: center;">Clientes</a></li>
                 {% endif %}           
                 {% if user.is_authenticated %}
