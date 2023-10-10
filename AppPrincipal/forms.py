@@ -59,14 +59,12 @@ class RegistroTratamientoForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # Personaliza el widget de fecha y hora para que sea más fácil de usar
+        
         self.fields['fecha_hora_inicio'].widget.attrs.update({'class': 'datetimepicker'})
         self.fields['fecha_hora_finalizacion'].widget.attrs.update({'class': 'datetimepicker'})
 
-        # Personaliza el widget de texto para el campo "resultados"
         self.fields['resultados'].widget = forms.Textarea(attrs={'rows': 4})
 
-# Nota: Asegúrate de tener una clase "datetimepicker" en tus archivos de hoja de estilo CSS para personalizar los campos de fecha y hora.
 
 class FacturaForm(forms.ModelForm):
     class Meta:
